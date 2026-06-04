@@ -8,9 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
- <link rel="icon" href="/img/favicon-white.ico" sizes="any">
+<link rel="icon" href="/img/favicon-white.ico" sizes="any">
 <link rel="icon" type="image/png" href="/img/favicon-white-512.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/img/favicon-white-192.png">
+
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -51,7 +52,7 @@
   .logo {
     display: inline-flex;
     align-items: center;
-    gap: 1.6rem;
+    gap: 1.4rem;
 
     font-family: 'Cormorant Garamond', serif;
     font-size: 22px;
@@ -61,24 +62,26 @@
     color: var(--ink);
     text-decoration: none;
     line-height: 1;
+    white-space: nowrap;
   }
 
   .logo img {
     width: 100px;
     height: auto;
     display: block;
+    flex-shrink: 0;
   }
 
-  .logo span {
+  .logo-text {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35em;
+  }
+
+  .logo-text span {
     font-style: italic;
     font-weight: 300;
     color: var(--ink-muted);
-  }
-  
-  .logo-text {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35em;
   }
   .nav-links {
     display: flex;
@@ -341,6 +344,27 @@
     .criteria-grid { grid-template-columns: 1fr; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     .hero-right { min-height: auto; }
+  }
+  
+  @media (max-width: 800px) {
+    nav {
+      padding: 1.5rem 5vw;
+      justify-content: center;
+    }
+
+    .logo {
+      gap: 1rem;
+      font-size: clamp(28px, 7vw, 36px);
+      letter-spacing: 0.14em;
+    }
+
+    .logo img {
+      width: 88px;
+    }
+
+    .nav-links {
+      display: none;
+    }
   }
 </style>
 </head>
